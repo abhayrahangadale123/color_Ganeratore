@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .warrp{
+            width: 100%;
+            height: 100vh;
+            /*background-color: rgb(57, 40, 5);*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        .box{
+            width: 25rem;
+            height: 8rem;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            
+        }
+        button{
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin: 1.5px;
+            border-radius: 8px;
+            border: 0.5px solid black;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warrp">
+        <div class="box">
+
+            <div id="color-code">#fff</div>
+            <button id="btn">click me</button> <br>
+            <h2>Click and chenge the color</h2>
+
+    </div>
+</div>
+
+</body>
+<script>
+
+  const getColor = () => {
+    
+     const colorCode = Math.floor(Math.random() * (16777215))
+     const colorNumber = "#" + colorCode.toString(16)
+     console.log(colorCode ,colorNumber);
+
+     document.body.style.backgroundColor = colorNumber
+
+
+
+      const btn = document.getElementById("btn") 
+      btn.style.backgroundColor = colorNumber
+
+      const color_no = document.getElementById("color-code") ;
+      color_no.innerHTML = colorNumber
+
+     
+     
+    }
+     document.getElementById("btn").addEventListener("click",
+      getColor
+     )
+     
+
+getColor();
+</script>
+</html>
